@@ -1,0 +1,23 @@
+const request = require('supertest')
+const app = require('../app');
+
+describe("Test if frontend server works", () => {
+    test("It should respond with statuscode 200", async () => {
+      const response = await request(app).get("/");
+      expect(response.statusCode).toBe(200);
+    });
+});
+
+describe("Test the add path", () => {
+    test("It should response the GET method", async () => {
+      const response = await request(app).get("/calc/add/1/2");
+      expect(response.statusCode).toBe(200);
+    });
+});
+
+describe("Test the add logic", () => {
+    test("It should respond with '7'", async () => {
+      const response = await request(app).get("/calc/add/5/2");
+      expect(response.body).toBe('7');
+    });
+});
