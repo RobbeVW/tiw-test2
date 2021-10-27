@@ -21,3 +21,17 @@ describe("Test the add logic", () => {
       expect(response.body).toBe('7');
     });
 });
+
+describe("Test the multiplication path", () => {
+    test("It should response the GET method", async () => {
+        const response = await request(app).get("/calc/multiply/1/2");
+        expect(response.statusCode).toBe(200);
+    });
+});
+
+describe("Test the multiplication logic", () => {
+    test("It should respond with '10'", async () => {
+        const response = await request(app).get("/calc/multiply/5/2");
+        expect(response.body).toBe('10');
+    });
+});
