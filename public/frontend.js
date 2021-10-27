@@ -1,14 +1,20 @@
 const addButton = document.getElementById('add');
 const subtractButton = document.getElementById('subtract');
+const multiplyButton = document.getElementById('multiply');
 
 // Provide eventlistener for add button which in his turn will call the add api endpoint
 addButton.addEventListener('click', function(event){
     calculate('add');
 });
 
+
 // Provide eventlistener for add button which in his turn will call the add api endpoint
 subtractButton.addEventListener('click', function(event){
     calculate('subtract');
+});
+
+multiplyButton.addEventListener('click', function (event) {
+    calculate('multiply');
 });
 
 // builds and API endpoint based on provided operand
